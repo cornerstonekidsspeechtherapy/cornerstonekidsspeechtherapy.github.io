@@ -3,3 +3,36 @@
 
 /* Brand refresh */
 body{color:#493a33}.site-header{background:rgba(255,241,230,.97)}.brand-logo{width:160px;height:66px;object-fit:contain;mix-blend-mode:multiply}.footer .brand-logo{width:175px;height:76px}h1,h2,h3{color:#563a2e;letter-spacing:-.025em}h1{font-weight:800}h2{font-weight:800}.nav-links a{font-weight:700}.mascot-list{display:grid;gap:26px;margin:36px 0 70px}.mascot{display:grid;grid-template-columns:minmax(180px,300px) 1fr;align-items:center;gap:38px;padding:24px 30px;border-radius:26px;background:#fff9f3}.mascot:nth-child(even){background:#f9e8df}.mascot:nth-child(even) .mascot-picture{order:2}.mascot-picture{max-width:300px;margin:auto}.mascot-picture img{width:100%;height:auto;mix-blend-mode:multiply;border-radius:16px}.mascot h3{font-size:clamp(26px,3vw,36px);margin-bottom:12px}.mascot p{max-width:640px}.commitments{padding:32px 0 10px}.commitment-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:28px}.commitment-grid>div{border-top:3px solid #c65a3a;padding:22px 5px}.commitment-grid h3{font-size:23px}@media(max-width:700px){.mascot{grid-template-columns:1fr;gap:10px;padding:20px}.mascot:nth-child(even) .mascot-picture{order:0}.mascot-picture{max-width:230px}.commitment-grid{grid-template-columns:1fr;gap:10px}.brand-logo{width:132px;height:59px}.nav{min-height:76px}.nav-links{top:75px}}
+
+
+/* Cornerstone Kids: October 2026 brand palette */
+:root{
+  --terra: #D65B37;
+  --peach: #E66D62;
+  --beige: #FEF2E5;
+  --sage: #8CA994;
+  --forest: #563A2E;
+  --ink: #493A33;
+  --paper: #FFF9F3;
+  --coral:#E66D62;
+  --golden:#E8A33B;
+  --soft-blue:#8AB7D7;
+}
+
+body{background:#FEF2E5}
+.site-header{background:rgba(254,242,229,.97)}
+.section.paper{background:rgba(255,249,243,.68)}
+.section.terra-soft{background:rgba(230,109,98,.13)}
+.card,.step,.faq details,.form{background:#FFF9F3}
+.s1{background:var(--coral)}
+.s2{background:var(--golden)}
+.s3{background:var(--sage)}
+.s4{background:var(--soft-blue)}
+.practice:nth-child(3n) .dot{background:var(--golden)}
+.practice:nth-child(4n) .dot{background:var(--soft-blue)}
+.value:nth-child(3){border-color:var(--golden)}
+.value:nth-child(4){border-color:var(--soft-blue)}
+.mascot:nth-child(even){background:rgba(230,109,98,.10)}
+.mascot:nth-child(odd){background:rgba(140,169,148,.11)}
+.brand-logo,.footer .brand-logo{mix-blend-mode:normal;object-fit:contain}
+h1,h2,h3,.eyebrow{color:#563A2E}
