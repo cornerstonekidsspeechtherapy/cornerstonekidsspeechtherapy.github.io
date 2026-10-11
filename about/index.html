@@ -5,15 +5,19 @@
 .mascot-list .mascot{grid-column:span 2;display:flex;flex-direction:column;align-items:center;gap:0;text-align:center;padding:0 12px;background:transparent!important;border-radius:0}
 .mascot-list .mascot:nth-child(4){grid-column:2/span 2}
 .mascot-list .mascot:nth-child(5){grid-column:4/span 2}
-.mascot-list .mascot .eyebrow{order:0;font-size:14px;letter-spacing:.12em;margin:0 0 16px;color:#563a2e}
+.mascot-list .mascot .eyebrow{order:2;font-size:clamp(18px,2vw,23px);font-weight:800;line-height:1.2;letter-spacing:.075em;text-transform:uppercase;margin:0 0 8px;color:#D65C37}
+.mascot-list .mascot:nth-child(2) .eyebrow{color:#648DAA}
+.mascot-list .mascot:nth-child(3) .eyebrow{color:#BA7B13}
+.mascot-list .mascot:nth-child(4) .eyebrow{color:#C45C79}
+.mascot-list .mascot:nth-child(5) .eyebrow{color:#638A6B}
 .mascot-list .mascot-picture{order:1;width:min(100%,235px);height:235px;max-width:none;display:flex;align-items:center;justify-content:center;overflow:hidden;border-radius:50%;margin:0 auto 20px;background:#f8ddd0}
 .mascot-list .mascot:nth-child(2) .mascot-picture{background:#dcebf6}
 .mascot-list .mascot:nth-child(3) .mascot-picture{background:#ffebc3}
 .mascot-list .mascot:nth-child(4) .mascot-picture{background:#f8dfe4}
 .mascot-list .mascot:nth-child(5) .mascot-picture{background:#e0eddd}
 .mascot-list .mascot-picture img{width:100%;height:100%;object-fit:contain;mix-blend-mode:multiply;border-radius:0}
-.mascot-list .mascot h3{order:2;font-size:clamp(24px,2.6vw,32px);margin:0 0 10px}
-.mascot-list .mascot>p:not(.eyebrow){order:3;margin:0;max-width:340px;font-size:16px;line-height:1.6}
+.mascot-list .mascot h3{order:3;font-size:clamp(24px,2.6vw,32px);margin:0 0 10px}
+.mascot-list .mascot>p:not(.eyebrow){order:4;margin:0;max-width:340px;font-size:16px;line-height:1.6}
 @media(max-width:850px){.mascot-list{grid-template-columns:repeat(2,minmax(0,1fr));gap:38px 18px}.mascot-list .mascot,.mascot-list .mascot:nth-child(4),.mascot-list .mascot:nth-child(5){grid-column:auto}.mascot-list .mascot:nth-child(5){grid-column:1/-1;width:min(100%,340px);justify-self:center}.mascot-list .mascot-picture{height:200px;width:200px}}
 @media(max-width:520px){.mascot-list{grid-template-columns:1fr;gap:42px}.mascot-list .mascot:nth-child(5){grid-column:auto}.mascot-list .mascot-picture{width:220px;height:220px}.mascot-list .mascot{padding:0 8px}}
 </style><style>
