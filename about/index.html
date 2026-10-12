@@ -21,10 +21,10 @@
 @media(max-width:850px){.mascot-list{grid-template-columns:repeat(2,minmax(0,1fr));gap:38px 18px}.mascot-list .mascot,.mascot-list .mascot:nth-child(4),.mascot-list .mascot:nth-child(5){grid-column:auto}.mascot-list .mascot:nth-child(5){grid-column:1/-1;width:min(100%,340px);justify-self:center}.mascot-list .mascot-picture{height:200px;width:200px}}
 @media(max-width:520px){.mascot-list{grid-template-columns:1fr;gap:42px}.mascot-list .mascot:nth-child(5){grid-column:auto}.mascot-list .mascot-picture{width:220px;height:220px}.mascot-list .mascot{padding:0 8px}}
 
-/* Enforce identical visual order for all five characters, overriding shared styles. */
+/* Names above values, with only the names slightly smaller. */
 .mascot-list .mascot > .mascot-picture{order:0!important}
-.mascot-list .mascot > .eyebrow{order:1!important}
-.mascot-list .mascot > h3{order:2!important}
+.mascot-list .mascot > h3{order:1!important;font-size:clamp(21px,2.2vw,27px)!important}
+.mascot-list .mascot > .eyebrow{order:2!important}
 .mascot-list .mascot > p:not(.eyebrow){order:3!important}
 </style><style>
 /* Cornerstone Kids footer: scoped to footer only */
