@@ -106,18 +106,18 @@ main#main > section.section.about-who-centred{padding-top:clamp(56px,6vw,82px)!i
  main#main .mascot-list .cornerstone-expand{flex-shrink:0}
 }
 </style><style>
-/* Mobile-only: keep expanded Cornerstone descriptions inside the phone viewport. */
+/* Mobile only: anchor each description below its own + button, centred on screen. */
 @media (max-width:520px){
  main#main .mascot-list .cornerstone-popover{
-  position:fixed!important;
-  top:50%!important;
-  left:50%!important;
+  position:absolute!important;
+  top:calc(100% + 12px)!important;
+  left:var(--cornerstone-popup-left,50%)!important;
   right:auto!important;
   bottom:auto!important;
-  transform:translate(-50%,-50%)!important;
+  transform:translateX(-50%)!important;
   width:calc(100vw - 40px)!important;
   max-width:330px!important;
-  max-height:calc(100dvh - 56px);
+  max-height:min(65dvh,460px);
   overflow-y:auto;
   box-sizing:border-box;
   overscroll-behavior:contain;
@@ -149,7 +149,21 @@ main#main > section.section.about-who-centred{padding-top:clamp(56px,6vw,82px)!i
 (function(){
  const cards=[...document.querySelectorAll('.mascot-list .mascot')];
  function close(card){const b=card.querySelector('.cornerstone-expand'),p=card.querySelector('.cornerstone-popover');p.hidden=true;b.textContent='+';b.setAttribute('aria-expanded','false');}
- cards.forEach((card,i)=>{const b=card.querySelector('.cornerstone-expand'),p=card.querySelector('.cornerstone-popover');p.id='cornerstone-description-'+i;b.setAttribute('aria-controls',p.id);b.addEventListener('click',()=>{const opening=p.hidden;cards.forEach(close);if(opening){p.hidden=false;b.textContent='−';b.setAttribute('aria-expanded','true');}});});
+ cards.forEach((card,i)=>{const b=card.querySelector('.cornerstone-expand'),p=card.querySelector('.cornerstone-popover');p.id='cornerstone-description-'+i;b.setAttribute('aria-controls',p.id);b.addEventListener('click',()=>{const opening=p.hidden;cards.forEach(close);if(opening){
+   if(window.matchMedia('(max-width:520px)').matches){
+    const cardRect=card.getBoundingClientRect();
+    const popupWidth=Math.min(330,window.innerWidth-40);
+    const centre=Math.max(20+popupWidth/2,Math.min(window.innerWidth-20-popupWidth/2,cardRect.left+cardRect.width/2));
+    p.style.setProperty('--cornerstone-popup-left',(centre-cardRect.left)+'px');
+   }
+   p.hidden=false;b.textContent='−';b.setAttribute('aria-expanded','true');
+   if(window.matchMedia('(max-width:520px)').matches){
+    requestAnimationFrame(()=>{
+     const rect=p.getBoundingClientRect();
+     if(rect.bottom>window.innerHeight-16){window.scrollBy({top:rect.bottom-window.innerHeight+20,behavior:'smooth'});}
+    });
+   }
+  }});});
  document.addEventListener('keydown',e=>{if(e.key==='Escape')cards.forEach(close)});
  document.addEventListener('click',e=>{if(!e.target.closest('.mascot-list .mascot'))cards.forEach(close)});
 })();
